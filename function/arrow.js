@@ -27,3 +27,9 @@ let this_obj={
 }
 // this_obj.getnum1();// 1
 // this_obj.getnum2();// 2
+
+//没有new方法，也不能使用call，apply，bind改变this指向
+let create_arrow=value=>value;
+// let new_arrow_obj=new create_arrow(1);// 错误 create_arrow is not a constructor
+// console.log(new_arrow_obj)
+

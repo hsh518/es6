@@ -25,3 +25,23 @@ function new_target(){
 //     }
 // }
 // console.log(typeof block_func);// function  严格模式下为 undefind
+
+//尾调用优化
+// function get_sum(n){
+//     if (n<=1) {
+//         return 1;
+//     }else{
+//         return n*get_sum(--n);// 未优化的尾调用
+//     }
+// }
+
+
+function get_sum(n,sum=1){
+    if (n<=1) {
+        return sum;
+    }else{
+        sum*=n;
+        return get_sum(--n,sum);// 已优化的尾调用
+    }
+}
+// console.log(get_sum(3));// 6
